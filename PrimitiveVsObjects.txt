@@ -1,0 +1,25 @@
+
+/** https://see.stanford.edu/materials/icspmcs106a/45-section-handout-9.pdf  */
+
+Section Handout #9: Objects and Data Structures
+
+1. Primitive vs. Objects
+
+ public boolean IsNameQ() {
+      String name = readLine("Enter name: ");
+      return (name == "Q");
+}
+
+The problem with the above method is that is trying to assert equality between two different objects.
+ The == sign is checking to see if both objects are the same in memory.
+In this case it will always return false. 
+
+
+public boolean IsNameQ() {
+String name = readLine("Enter name: ");
+char ch = name.charAt(0);
+return ((ch == 'Q') && (name.length() == 1));
+}
+
+The above code checks if the char at position 0 (first letter) of the String is 'Q', in this case the == is useful because is comparing two elements on the same level.
+name.lenght() returns a int number. so if the String name = "Q", it will return true. 
